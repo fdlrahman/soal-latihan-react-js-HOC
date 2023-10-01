@@ -2,6 +2,8 @@
 //!  2. buat & gunakan Higher Order Component (HOC).
 import { useState } from "react";
 import "./App.css";
+import Increment from "./components/Increment";
+import Weather from "./components/Weather";
 
 function App() {
   const [nomor, setNomor] = useState(0);
@@ -12,16 +14,10 @@ function App() {
 
   return (
     <>
-      <div>
-        <h3>x + 1</h3>
-        <p>{nomor}</p>
-        <button onClick={handlerNomor}>tambah</button>
-      </div>
-      <div>
-        <h3>x + 1</h3>
-        <p>{nomor}</p>
-        <button onClick={handlerNomor}>tambah</button>
-      </div>
+      <Increment counter={1} />
+      <Increment counter={2} />
+
+      <Weather weathers={[{ country: "ID", temp: 20 }]} />
     </>
   );
 }
